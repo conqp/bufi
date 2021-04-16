@@ -31,9 +31,9 @@ double FinanceProject::getInvestment() const
 
 double FinanceProject::getCapitalValue() const
 {
-	double result = depositSurplusses[0];
+	double result = 0;
 
-	for (long unsigned int i = 1; i < depositSurplusses.size(); i++)
+	for (long unsigned int i = 0; i < depositSurplusses.size(); i++)
 		result += depositSurplusses[i] / pow(1 + interestRate, i);
 
 	return result;
