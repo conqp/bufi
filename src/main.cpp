@@ -15,22 +15,16 @@ void task1() {
 	vector<double> p1rates = {-35, 38.5, 127.05};
 	vector<double> p2rates = {-100, 165, 242};
 	vector<double> p3rates = {-50, 110, 60.5};
-
-	FinanceProject p1(p1rates);
-	FinanceProject p2(p2rates);
-	FinanceProject p3(p3rates);
-
-	vector<FinanceProject> projects = {p1, p2, p3};
 	double interestRate = 0.1;
 
+	FinanceProject p1(p1rates, interestRate);
+	FinanceProject p2(p2rates, interestRate);
+	FinanceProject p3(p3rates, interestRate);
+
+	vector<FinanceProject> projects = {p1, p2, p3};
+
 	for (FinanceProject project : projects)
-	{
-		cout << project << ":" << endl;
-		cout << "    Capital value @ " << interestRate << " = ";
-		cout << project.getCapitalValue(interestRate) << endl;
-		cout << "    Capital value rate @ " << interestRate << " = ";
-		cout << project.getCapitalValueRate(interestRate) << endl;
-	}
+		cout << project << endl;
 }
 
 int main() {

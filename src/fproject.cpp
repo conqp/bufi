@@ -9,12 +9,13 @@
 #include "functions.h"
 #include "fproject.h"
 
+using std::endl;
 using std::ostream;
 using std::string;
 using std::vector;
 
-FinanceProject::FinanceProject(vector<double>& depositSurplusses)
-: depositSurplusses(depositSurplusses)
+FinanceProject::FinanceProject(vector<double>& depositSurplusses, double interestRate)
+: depositSurplusses(depositSurplusses), interestRate(interestRate)
 {
 }
 
@@ -23,7 +24,7 @@ vector<double> FinanceProject::getDepositSurplusses() const
 	return depositSurplusses;
 }
 
-double FinanceProject::getCapitalValue(double interestRate) const
+double FinanceProject::getCapitalValue() const
 {
 	double result = depositSurplusses[0];
 
@@ -33,14 +34,16 @@ double FinanceProject::getCapitalValue(double interestRate) const
 	return result;
 }
 
-double FinanceProject::getCapitalValueRate(double interestRate) const
+double FinanceProject::getCapitalValueRate() const
 {
-	return getCapitalValue(interestRate) / abs(depositSurplusses[0]);
+	return getCapitalValue() / abs(depositSurplusses[0]);
 }
 
 void FinanceProject::print(ostream& target) const
 {
-	target << "Deposit surplusses: " << join<double>(depositSurplusses, ", ");
+	target << "Deposit surplusses: " << join<double>(depositSurplusses, ", ") << endl;
+	target << "Capital value: " << getCapitalValue() << endl;
+	target << "Capital value rate: " << getCapitalValueRate() << endl;
 }
 
 ostream& operator<<(ostream& target, FinanceProject const& project)

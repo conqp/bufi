@@ -11,13 +11,14 @@
 class FinanceProject {
 private:
 	std::vector<double> depositSurplusses;
+	double interestRate;
 public:
-	FinanceProject(std::vector<double>& depositSurplusses);
+	FinanceProject(std::vector<double>& depositSurplusses, double interestRate);
 	virtual ~FinanceProject() = default;
 
 	std::vector<double> getDepositSurplusses() const;
-	double getCapitalValue(double interestRate) const;
-	double getCapitalValueRate(double interestRate) const;
+	double getCapitalValue() const;
+	double getCapitalValueRate() const;
 	virtual void print(std::ostream& target = std::cout) const;
 	friend std::ostream& operator<<(std::ostream& target, FinanceProject const& person);
 };
