@@ -22,9 +22,18 @@ void task1() {
 	FinanceProject p3(p3rates, interestRate);
 
 	vector<FinanceProject> projects = {p1, p2, p3};
+	cout << "######### Projects ##########" << endl;
 
 	for (FinanceProject project : projects)
 		cout << project << endl;
+
+	cout << "####### Investments #########" << endl;
+
+	double budget = 50;
+	vector<double> investments = investOptimal(budget, projects);
+
+	for (long unsigned int i = 0; i < investments.size(); i++)
+		cout << projects[i] << "Investment: " << investments[i] << endl << endl;
 }
 
 int main() {

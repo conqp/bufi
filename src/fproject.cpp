@@ -24,6 +24,11 @@ vector<double> FinanceProject::getDepositSurplusses() const
 	return depositSurplusses;
 }
 
+double FinanceProject::getInvestment() const
+{
+	return abs(depositSurplusses[0]);
+}
+
 double FinanceProject::getCapitalValue() const
 {
 	double result = depositSurplusses[0];
@@ -50,6 +55,35 @@ ostream& operator<<(ostream& target, FinanceProject const& project)
 {
 	project.print(target);
 	return target;
+}
+
+bool sortByCapitalValueRate(FinanceProject alice, FinanceProject bob)
+{
+	return alice.getCapitalValueRate() > bob.getCapitalValue();
+}
+
+vector<double> investOptimal(double budget, std::vector<FinanceProject> projects)
+{
+	double investment;
+	vector<double> result = {};
+	sort(projects.begin(), projects.end(), sortByCapitalValueRate);
+
+	for (FinanceProject project : projects) {
+		if (budget == 0)
+			break;
+
+		investment = project.getInvestment();
+
+		if (budget < investment) {
+			result.emplace_back(budget);
+			return result;
+		}
+
+		result.emplace_back(investment);
+		budget -= investment;
+	}
+
+	return result;
 }
 
 #endif
