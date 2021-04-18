@@ -66,6 +66,9 @@ vector<double> investOptimal(double budget, std::vector<FinancingProject> projec
 	sort(projects.begin(), projects.end(), sortByCapitalValueRate);
 
 	for (FinancingProject project : projects) {
+		if (project.getCapitalValueRate < 0)
+			break;
+
 		if (budget == 0)
 			break;
 
