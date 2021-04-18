@@ -8,23 +8,23 @@
 /**
  * Finanzierungsprojekt
  */
-class FinanceProject {
+class FinancingProject {
 private:
 	std::vector<double> depositSurplusses;
 	double interestRate;
 public:
-	FinanceProject(std::vector<double>& depositSurplusses, double interestRate);
-	virtual ~FinanceProject() = default;
+	FinancingProject(std::vector<double>& depositSurplusses, double interestRate);
+	virtual ~FinancingProject() = default;
 
 	std::vector<double> getDepositSurplusses() const;
 	double getInvestment() const;
 	double getCapitalValue() const;
 	double getCapitalValueRate() const;
 	virtual void print(std::ostream& target = std::cout) const;
-	friend std::ostream& operator<<(std::ostream& target, FinanceProject const& person);
+	friend std::ostream& operator<<(std::ostream& target, FinancingProject const& person);
 };
 
-bool sortByCapitalValueRate(FinanceProject alice, FinanceProject bob);
-std::vector<double> investOptimal(double budget, std::vector<FinanceProject> projects);
+bool sortByCapitalValueRate(FinancingProject alice, FinancingProject bob);
+std::vector<double> investOptimal(double budget, std::vector<FinancingProject> projects);
 
 #endif

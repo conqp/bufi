@@ -17,14 +17,14 @@ void task1() {
 	vector<double> p3rates = {-50, 110, 60.5};
 	double interestRate = 0.1;
 
-	FinanceProject p1(p1rates, interestRate);
-	FinanceProject p2(p2rates, interestRate);
-	FinanceProject p3(p3rates, interestRate);
+	FinancingProject p1(p1rates, interestRate);
+	FinancingProject p2(p2rates, interestRate);
+	FinancingProject p3(p3rates, interestRate);
 
-	vector<FinanceProject> projects = {p1, p2, p3};
+	vector<FinancingProject> projects = {p1, p2, p3};
 	cout << "######### Projects ##########" << endl;
 
-	for (FinanceProject project : projects)
+	for (FinancingProject project : projects)
 		cout << project << endl;
 
 	cout << "####### Investments #########" << endl;
