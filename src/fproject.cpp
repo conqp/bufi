@@ -1,6 +1,3 @@
-#ifndef __FPROJECT__
-#define __FPROJECT__
-
 #include <cmath>
 #include <ostream>
 #include <string>
@@ -85,5 +82,3 @@ vector<double> investOptimal(double budget, std::vector<FinancingProject> projec
 
 	return result;
 }
-
-#endif
