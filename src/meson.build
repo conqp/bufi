@@ -2,6 +2,7 @@ bufi_sources = [
   'fproject.cpp',
   'task1.cpp',
   'task2.cpp',
+  'task3.cpp',
   'main.cpp',
 ]
 
