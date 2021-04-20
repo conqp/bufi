@@ -13,7 +13,7 @@ using bufi::investOptimal;
 /*
 	Capital values and rates.
 */
-void task1() {
+void bufi::task1() {
 	vector p1rates = {-35.0, 38.5, 127.05};
 	vector p2rates = {-100.0, 165.0, 242.0};
 	vector p3rates = {-50.0, 110.0, 60.5};

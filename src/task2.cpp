@@ -10,7 +10,7 @@ using std::vector;
 using bufi::FinancingProject;
 using bufi::investOptimal;
 
-void task2()
+void bufi::task2()
 {
 	vector p1rates = {-60.0, 120.0};
 	vector p2rates = {-90.0, 120.0};

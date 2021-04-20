@@ -1,6 +1,8 @@
 #ifndef TASK2_H
 #define TASK2_H
 
-void task2();
+namespace bufi {
+	void task2();
+}
 
 #endif
