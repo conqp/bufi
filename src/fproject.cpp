@@ -55,12 +55,12 @@ ostream& bufi::operator<<(ostream& target, FinancingProject const& project)
 	return target;
 }
 
-bool bufi::sortByCapitalValueRate(FinancingProject alice, FinancingProject bob)
+bool bufi::sortByCapitalValueRate(FinancingProject const & alice, FinancingProject const & bob)
 {
 	return alice.getCapitalValueRate() > bob.getCapitalValue();
 }
 
-vector<double> bufi::investOptimal(double budget, std::vector<FinancingProject> projects)
+vector<double> bufi::investOptimal(double budget, std::vector<FinancingProject>& projects)
 {
 	double investment;
 	vector<double> result = {};
