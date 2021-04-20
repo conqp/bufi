@@ -8,7 +8,7 @@ using std::cout;
 using std::endl;
 using std::vector;
 using bufi::FinancingProject;
-using bufi::investOptimal;
+using bufi::getExecutableProjects;
 
 void bufi::task3()
 {
@@ -25,18 +25,12 @@ void bufi::task3()
 	FinancingProject p4(p4rates, interestRate);
 
 	vector projects = {p1, p2, p3, p4};
-	cout << "######### Projects ##########" << endl;
+	vector executableProjects = getExecutableProjects(projects);
 
-	for (FinancingProject project : projects)
+	cout << "### Executable projects ####" << endl;
+
+	for (FinancingProject project : executableProjects)
 		cout << project << endl;
-
-	cout << "####### Investments #########" << endl;
-
-	double budget = 400;
-	vector investments = investOptimal(budget, projects);
-
-	for (long unsigned int i = 0; i < investments.size(); i++)
-		cout << projects[i] << "Investment: " << investments[i] << endl << endl;
 
 	cout << endl;
 }
