@@ -60,16 +60,28 @@ bool bufi::sortByCapitalValueRate(FinancingProject const & alice, FinancingProje
 	return alice.getCapitalValueRate() > bob.getCapitalValue();
 }
 
-vector<double> bufi::investOptimal(double budget, std::vector<FinancingProject>& projects)
+vector<FinancingProject> bufi::getExecutableProjects(vector<FinancingProject>& projects)
 {
-	double investment;
-	vector<double> result = {};
+	vector<FinancingProject> result = {};
 	sort(projects.begin(), projects.end(), sortByCapitalValueRate);
 
 	for (FinancingProject project : projects) {
 		if (project.getCapitalValueRate() < 0)
 			break;
 
+		result.emplace_back(project);
+	}
+
+	return result;
+}
+
+vector<double> bufi::investOptimal(double budget, vector<FinancingProject>& projects)
+{
+	double investment;
+	vector<double> result = {};
+	sort(projects.begin(), projects.end(), sortByCapitalValueRate);
+
+	for (FinancingProject project : getExecutableProjects(projects)) {
 		if (budget == 0)
 			break;
 

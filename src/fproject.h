@@ -27,6 +27,7 @@ namespace bufi {
 
 	std::ostream& operator<<(std::ostream& target, FinancingProject const& person);
 	bool sortByCapitalValueRate(FinancingProject const & alice, FinancingProject const & bob);
+	std::vector<FinancingProject> getExecutableProjects(std::vector<FinancingProject>& projects);
 	std::vector<double> investOptimal(double budget, std::vector<FinancingProject>& projects);
 }
 
