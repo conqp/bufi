@@ -10,6 +10,7 @@ using std::endl;
 using std::ostream;
 using std::string;
 using std::vector;
+using bufi::FinancingProject;
 
 FinancingProject::FinancingProject(vector<double>& depositSurplusses, double interestRate)
 : depositSurplusses(depositSurplusses), interestRate(interestRate)
@@ -48,18 +49,18 @@ void FinancingProject::print(ostream& target) const
 	target << "Capital value rate: " << getCapitalValueRate() << endl;
 }
 
-ostream& operator<<(ostream& target, FinancingProject const& project)
+ostream& bufi::operator<<(ostream& target, FinancingProject const& project)
 {
 	project.print(target);
 	return target;
 }
 
-bool sortByCapitalValueRate(FinancingProject alice, FinancingProject bob)
+bool bufi::sortByCapitalValueRate(FinancingProject alice, FinancingProject bob)
 {
 	return alice.getCapitalValueRate() > bob.getCapitalValue();
 }
 
-vector<double> investOptimal(double budget, std::vector<FinancingProject> projects)
+vector<double> bufi::investOptimal(double budget, std::vector<FinancingProject> projects)
 {
 	double investment;
 	vector<double> result = {};

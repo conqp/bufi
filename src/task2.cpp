@@ -7,6 +7,8 @@
 using std::cout;
 using std::endl;
 using std::vector;
+using bufi::FinancingProject;
+using bufi::investOptimal;
 
 void task2()
 {
