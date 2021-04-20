@@ -14,6 +14,7 @@ using bufi::investOptimal;
 	Capital values and rates.
 */
 void bufi::task1() {
+	cout << "######### Task 1 ##########" << endl;
 	vector p1rates = {-35.0, 38.5, 127.05};
 	vector p2rates = {-100.0, 165.0, 242.0};
 	vector p3rates = {-50.0, 110.0, 60.5};
@@ -36,4 +37,6 @@ void bufi::task1() {
 
 	for (long unsigned int i = 0; i < investments.size(); i++)
 		cout << projects[i] << "Investment: " << investments[i] << endl << endl;
+
+	cout << endl;
 }

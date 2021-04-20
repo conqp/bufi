@@ -12,6 +12,7 @@ using bufi::investOptimal;
 
 void bufi::task2()
 {
+	cout << "######### Task 2 ##########" << endl;
 	vector p1rates = {-60.0, 120.0};
 	vector p2rates = {-90.0, 120.0};
 	vector p3rates = {-150.0, 150.0};
@@ -36,4 +37,6 @@ void bufi::task2()
 
 	for (long unsigned int i = 0; i < investments.size(); i++)
 		cout << projects[i] << "Investment: " << investments[i] << endl << endl;
+
+	cout << endl;
 }
