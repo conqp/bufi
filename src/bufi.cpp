@@ -114,6 +114,7 @@ double bufi::presentValue(double interestRate, int runtime)
 */
 double bufi::frm_in_advance(double cashflow, double interestRate, double runtime)
 {
+	return 0;
 }
 
 /*
