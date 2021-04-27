@@ -98,3 +98,8 @@ vector<double> bufi::investOptimal(double budget, vector<FinancingProject>& proj
 
 	return result;
 }
+
+double bufi::rbf(double interestRate, int runtime)
+{
+	return (1 / interestRate) * (1 - (1 / (pow(1 + interestRate, runtime))));
+}
