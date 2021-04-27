@@ -109,19 +109,19 @@ double bufi::presentValue(double interestRate, int runtime)
 }
 
 /*
-	Fixed-rate mortgage in advance
-	DE: vorschüssige Annuität
-*/
-double bufi::frm_in_advance(double cashflow, double interestRate, double runtime)
-{
-	return 0;
-}
-
-/*
 	Fixed-rate mortgage in rears
 	DE: nachschüssige Annuität
 */
 double bufi::frm_in_rears(double cashflow, double interestRate, double runtime)
 {
 	return cashflow * presentValue(interestRate, runtime);
+}
+
+/*
+	Fixed-rate mortgage in advance
+	DE: vorschüssige Annuität
+*/
+double bufi::frm_in_advance(double cashflow, double interestRate, double runtime)
+{
+	return (1 + interestRate) * frm_in_rears(cashflow, interestRate, runtime);
 }
