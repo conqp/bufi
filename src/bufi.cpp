@@ -125,3 +125,8 @@ double bufi::FRMInAdvance(double cashflow, double interestRate, double runtime)
 {
 	return (1 + interestRate) * FRMInRears(cashflow, interestRate, runtime);
 }
+
+double bufi::equivalentFRM(double capitalValue, double presentValue)
+{
+	return capitalValue / presentValue;
+}

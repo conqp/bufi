@@ -36,6 +36,7 @@ namespace bufi {
 	double presentValue(double interestRate, int runtime);
 	double FRMInAdvance(double cashflow, double interestRate, double runtime);
 	double FRMInRears(double cashflow, double interestRate, double runtime);
+	double equivalentFRM(double capitalValue, double presentValue);
 }
 
 #endif
