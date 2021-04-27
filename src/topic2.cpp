@@ -24,5 +24,6 @@ void topic2::example1()
 
 void topic2::run_tasks()
 {
+	cout << ":::   Topic 2   :::" << endl;
 	example1();
 }
