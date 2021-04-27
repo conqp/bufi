@@ -33,7 +33,7 @@ namespace bufi {
 	bool sortByCapitalValueRate(FinancingProject const & alice, FinancingProject const & bob);
 	std::vector<FinancingProject> getExecutableProjects(std::vector<FinancingProject>& projects);
 	std::vector<double> investOptimal(double budget, std::vector<FinancingProject>& projects);
-	double rbf(double interestRate, int runtime);
+	double presentValue(double interestRate, int runtime);
 }
 
 #endif
