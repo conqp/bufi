@@ -107,3 +107,20 @@ double bufi::presentValue(double interestRate, int runtime)
 {
 	return (1 / interestRate) * (1 - (1 / (pow(1 + interestRate, runtime))));
 }
+
+/*
+	Fixed-rate mortgage in advance
+	DE: vorschüssige Annuität
+*/
+double bufi::frm_in_advance(double cashflow, double interestRate, double runtime)
+{
+}
+
+/*
+	Fixed-rate mortgage in rears
+	DE: nachschüssige Annuität
+*/
+double bufi::frm_in_rears(double cashflow, double interestRate, double runtime)
+{
+	return cashflow * presentValue(interestRate, runtime);
+}
