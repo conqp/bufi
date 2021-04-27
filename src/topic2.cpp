@@ -23,8 +23,6 @@ void topic2::example1()
 	double pva = presentValue(interestRate, runtime);
 	double frmRears = FRMInRears(cashflow, interestRate, runtime);
 	double frmAdvance = FRMInAdvance(cashflow, interestRate, runtime);
-	double equivFRMRears = equivalentFRM(frmRears, pva);
-	double equivFRMAdvance = equivalentFRM(frmAdvance, pva);
 
 	cout << "* Example PVA:" << endl;
 	cout << "Interest rate: " << interestRate << endl;
@@ -32,12 +30,23 @@ void topic2::example1()
 	cout << "=> PVA: " << pva << endl;
 	cout << "=> FRM in rears: " << frmRears << endl;
 	cout << "=> FRM in advance: " << frmAdvance << endl;
-	cout << "=> Equivalent FRM in rears: " << equivFRMRears << endl;
-	cout << "=> Equivalent FRM in advance: " << equivFRMAdvance << endl;
+}
+
+void topic2::example2()
+{
+	double capitalValue = 500000.0;
+	double interestRate = 6.0 / 100;
+	int runtime = 5;
+
+	double pva = presentValue(interestRate, runtime);
+	double equivFRM = equivalentFRM(capitalValue, pva);
+
+	cout << "=> Equivalent FRM: " << equivFRM << endl;
 }
 
 void topic2::run_tasks()
 {
 	cout << ":::   Topic 2   :::" << endl;
 	example1();
+	example2();
 }
