@@ -16,7 +16,7 @@ using bufi::FRMInRears;
 void topic2::example1()
 {
 	cout << "* Example PVA:" << endl;
-	double cashflow = 10000.0;
+	double cashflow = 10000.0;		// ten thousand euros
 	double interestRate = 4.0 / 100;	// four percent
 	int runtime = 3; 			// three years
 	cout << "Interest rate: " << interestRate << endl;
