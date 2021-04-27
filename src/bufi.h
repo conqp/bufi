@@ -34,8 +34,8 @@ namespace bufi {
 	std::vector<FinancingProject> getExecutableProjects(std::vector<FinancingProject>& projects);
 	std::vector<double> investOptimal(double budget, std::vector<FinancingProject>& projects);
 	double presentValue(double interestRate, int runtime);
-	double frm_in_advance(double cashflow, double interestRate, double runtime);
-	double frm_in_rears(double cashflow, double interestRate, double runtime);
+	double FRMInAdvance(double cashflow, double interestRate, double runtime);
+	double FRMInRears(double cashflow, double interestRate, double runtime);
 }
 
 #endif
