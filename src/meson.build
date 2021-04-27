@@ -1,14 +1,10 @@
-bufi_sources = [
-  'bufi.cpp',
-  'topic1.cpp',
-  'topic2.cpp',
-  'main.cpp',
-]
+subdir('libbufi')
+subdir('topics')
 
-bufi_deps = [
-]
+bufi_includes = include_directories('topics')
 
-executable('bufi', bufi_sources,
-  dependencies: bufi_deps,
-  install: true,
+executable('bufi', 'main.cpp',
+  include_directories: bufi_includes,
+  link_with: topics,
+  install: true
 )
