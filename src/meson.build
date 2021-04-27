@@ -1,6 +1,7 @@
 bufi_sources = [
   'bufi.cpp',
   'topic1.cpp',
+  'topic2.cpp',
   'main.cpp',
 ]
 
