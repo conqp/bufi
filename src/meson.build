@@ -1,5 +1,5 @@
 bufi_sources = [
-  'fproject.cpp',
+  'bufi.cpp',
   'topic1.cpp',
   'main.cpp',
 ]

@@ -1,5 +1,9 @@
-#ifndef FPROJECT_H
-#define FPROJECT_H
+/* SPDX-License-Identifier: GPL-3.0 */
+/*
+ * Business finance library.
+ */
+#ifndef BUFI_H
+#define BUFI_H
 
 #include <iostream>
 #include <string>

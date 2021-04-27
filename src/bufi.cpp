@@ -3,8 +3,8 @@
 #include <string>
 #include <vector>
 
+#include "bufi.h"
 #include "functions.h"
-#include "fproject.h"
 
 using std::endl;
 using std::ostream;
